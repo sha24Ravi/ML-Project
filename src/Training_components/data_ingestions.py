@@ -3,15 +3,16 @@ import sys
 import pandas as pd
 from src.exceptions import CustomeException
 from src.loggers import logging
+from src.Training_components import data_transformation
 from  sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
 
 @dataclass
 class dataIngestion_config:
-    train_data_path=os.path.join("artifcat","train.csv")
-    test_data_path=os.path.join("artifcat","test.csv")
-    raw_data_path=os.path.join("artifcat","raw.csv")
+    train_data_path=os.path.join("artifact","train.csv")
+    test_data_path=os.path.join("artifact","test.csv")
+    raw_data_path=os.path.join("artifact","raw.csv")
 
 
 class DataIngestion:
@@ -42,4 +43,7 @@ class DataIngestion:
 
 if __name__=="__main__":
     obj=DataIngestion()
-    obj.initiate_dataIngestion()
+    train_data,test_data=obj.initiate_dataIngestion()
+    dataTransformation=data_transformation.DataTransformation()
+    dataTransformation.intiate_data_tranform(train_data,test_data)
+
