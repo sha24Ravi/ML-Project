@@ -4,4 +4,6 @@ seaborn
 scikit-learn
 xgboost
 dill
+flask
+catboost
 #-e .

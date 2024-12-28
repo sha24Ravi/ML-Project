@@ -4,6 +4,8 @@ import pandas as pd
 from src.exceptions import CustomeException
 from src.loggers import logging
 from src.Training_components import data_transformation,model_trainer
+from src.Training_components.model_trainer import ModelTrainer
+
 from  sklearn.model_selection import train_test_split
 from dataclasses import dataclass
 
